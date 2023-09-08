@@ -3,7 +3,7 @@ const dataLength = parseInt(validationInput.getAttribute("data-length"));
 
 validationInput.addEventListener("blur", function () {
 
-const inputValue = validationInput.value;
+const inputValue = validationInput.value.trim();
 const inputLength = inputValue.length;
 
 

@@ -4,7 +4,7 @@ const categoryItems = categoriesList.querySelectorAll('li.item');
 console.log(`Number of categories: ${categoryItems.length}`);
 
 categoryItems.forEach((categoryItem) => {
-const categoryTitle = categoryItem.querySelector('h2').textContent;
+const categoryTitle = categoryItem.firstElementChild.textContent;
 const subItems = categoryItem.querySelectorAll('li');
 
 console.log(`Category: ${categoryTitle}`);

@@ -7,5 +7,3 @@ const inputValue = nameInput.value;
 
     nameOutput.textContent = inputValue.trim() !== "" ? inputValue : "Anonymous";
 });
-
-// знайшов в інеті 8 рядок про trim уяви собі не мав 
