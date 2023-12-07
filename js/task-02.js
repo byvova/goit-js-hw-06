@@ -1,21 +1,26 @@
-const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
-];
+class Storage {
+  #items;
 
-const ingredientsList = document.querySelector('#ingredients');
+  constructor(initialItems) {
+    this.#items = [...initialItems];
+  }
 
-const ingredientItems = ingredients.map((ingredient) => {
-  const listItem = document.createElement('li');
-  listItem.textContent = ingredient;
-  listItem.classList.add('item');
-  return listItem;
-});
+  getItems() {
+    return this.#items;
+  }
 
-ingredientsList.append(...ingredientItems);
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+  removeItem(itemToRemove) {
+    a => this.#items.remove(itemToRemove)
+  }
+}
 
-console.log(ingredientsList.innerHTML);
+
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
